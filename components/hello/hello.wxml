@@ -1,0 +1,3 @@
+<!--components/hello/hello.wxml-->
+<view>{{ num }}</view>
+<button bindtap="unpdate">+</button>

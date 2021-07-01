@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/test/test",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/test/test",
+      "iconPath": "/assets/首页1.png",
+      "selectedIconPath": "/assets/首页.png"
+    },
+    {
+      "pagePath": "pages/logs/logs",
+      "iconPath": "/assets/log1.png",
+      "selectedIconPath": "/assets/log.png"
+    }
+    ]
+  }
+}

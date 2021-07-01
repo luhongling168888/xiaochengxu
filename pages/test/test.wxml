@@ -1,0 +1,104 @@
+<!--pages/test/test.wxml-->
+<scroll-view scroll-y style="height: 300rpx"  scroll-into-view="{{view}}" scroll-with-animation>
+  <view class="item" id="a"></view>
+  <view class="item" id="b"></view>
+  <view class="item" id="c"></view>
+  <view class="item" id="d"></view>
+  <view class="item" id="e"></view>
+  <view class="item" id="f"></view>
+  <view class="item" id="g"></view>
+</scroll-view>
+<scroll-view scroll-x style="white-space:nowrap">
+  <view class="item1" id="a" bindtap="show"></view>
+  <view class="item1" id="b" bindtap="show"></view>
+  <view class="item1" id="c" bindtap="show"></view>
+  <view class="item1" id="d" bindtap="show"></view>
+  <view class="item1" id="e" bindtap="show"></view>
+  <view class="item1" id="f" bindtap="show"></view>
+  <view class="item1" id="g" bindtap="show"></view>
+</scroll-view>
+<swiper indicator-dots="true" indicator-color="rgba(255,255,255)" indicator-active-color="rgba(7,193,96)">
+  <swiper-item wx:for="{{index_slides}}" wx:key="index">
+    <image src="{{ item.slide_url }}" style="width:100%;display:block;height:380rpx" />
+  </swiper-item>
+</swiper>
+<movable-area class="area">
+  <movable-view class="area-view" direction="horizontal" out-of-bounds="true">
+    <view class="left"></view>
+    <view class="right"></view>
+  </movable-view>
+</movable-area>
+<icon size="120rpx" type="success"></icon>
+<form bindsubmit="doSubmit" bindreset="doReset">
+  <view>
+    用户名:<input type="text" name="username" placeholder="请输入用户名" />
+  </view>
+  <view>
+    密码:<input type="text" name="password" password="true" placeholder="请输入密码" />
+  </view>
+  <view>
+    请输入金额:<input type="digit" name="digit" placeholder="请输入金额" />
+  </view>
+  <view>
+   爱好:
+   <checkbox-group name="hobby" >
+    <checkbox value="A">A</checkbox>
+    <checkbox value="B">B</checkbox>
+    <checkbox value="C">C</checkbox>
+    <checkbox value="D">D</checkbox>
+    <checkbox value="E">E</checkbox>
+   </checkbox-group>
+  </view>
+<view>
+  选一个:
+   <radio-group name="cource" bindchange="radiioChange">
+    <radio value="a">A</radio>
+    <radio value="b">B</radio>
+    <radio value="c">C</radio>
+   </radio-group>
+</view>
+<view>
+  是否保存:<switch name="isSave" />
+</view>
+<view>
+  介绍:<textarea />
+</view>
+<view>
+  选择:
+  <picker value="1" range="{{[1,2,3]}}">
+    <view>请选择</view>
+  </picker>
+  <picker mode="multiSelector" range="{{[[1,2,3],[1,2,3],[1,2,3]]}}">
+    <view>请选择多列</view>
+  </picker>
+  <picker mode="date">
+    <view>请选择日期</view>
+  </picker>
+  <picker mode="region">
+    <view>请选择地区</view>
+  </picker>
+  <picker-view indicator-style="height:50px" style="width:100%;height:300rpx" bindchange="bindPicker">
+    <picker-view-column>
+      <view wx:for="{{[1,2,3]}}">
+      {{item}}
+      </view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{[1,2,3]}}">
+      {{item}}
+      </view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{[1,2,3]}}">
+      {{item}}
+      </view>
+    </picker-view-column>
+  </picker-view>
+  <open-data type="userAvatarUrl"></open-data>
+  <open-data type="userNickName"></open-data>
+</view>
+  <button form-type="submit">提交</button>
+  <button form-type="reset">重置</button>
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取当前登录用户信息</button>
+  <button open-type="openSetting" bindgetuserinfo="openSetting">openSetting</button>
+</form>
